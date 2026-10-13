@@ -47,9 +47,9 @@ Campus Event Explorer is a small Android app built with Jetpack Compose that let
     <td align="center"><img src="https://github.com/user-attachments/assets/d9bece96-16b9-4aef-8a7f-62df6520d6c3" width="230" alt="Search example 3"/></td>
   </tr>
   <tr>
-    <td align="center"><b>Search example 1</b></td>
-    <td align="center"><b>Search example 2</b></td>
-    <td align="center"><b>Search example 3</b></td>
+    <td align="center"><b>Event list screen</b></td>
+    <td align="center"><b>Event detail screen</b></td>
+    <td align="center"><b>Returning to list screen</b></td>
   </tr>
 </table>
 
