@@ -25,29 +25,55 @@ Campus Event Explorer is a small Android app built with Jetpack Compose that let
 
 ## Screenshots
 
-# List screen + event detail:
+### List Screen & Event Detail
 
-<img width="387" height="858" alt="image" src="https://github.com/user-attachments/assets/ffa8ac95-47e2-4bde-8104-a6fa61a54ae6" />
+<table>
+  <tr>
+    <td align="center"><img src="https://github.com/user-attachments/assets/ffa8ac95-47e2-4bde-8104-a6fa61a54ae6" width="250" alt="Event list screen"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/73603460-6463-4a3d-b48e-60722b0a55a3" width="250" alt="Event detail screen"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Event list</b></td>
+    <td align="center"><b>Event detail</b></td>
+  </tr>
+</table>
 
-<img width="382" height="846" alt="image" src="https://github.com/user-attachments/assets/73603460-6463-4a3d-b48e-60722b0a55a3" />
+### Filtering with a Search Query
 
-# Filtering with search query:
+<table>
+  <tr>
+    <td align="center"><img src="https://github.com/user-attachments/assets/7de7aae1-3dd3-45b8-ac7b-dc86c4f73148" width="230" alt="Search example 1"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/db65c08f-d0ea-4c82-a4b3-b1bacde03423" width="230" alt="Search example 2"/></td>
+    <td align="center"><img src="https://github.com/user-attachments/assets/d9bece96-16b9-4aef-8a7f-62df6520d6c3" width="230" alt="Search example 3"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Search example 1</b></td>
+    <td align="center"><b>Search example 2</b></td>
+    <td align="center"><b>Search example 3</b></td>
+  </tr>
+</table>
 
-<img width="377" height="843" alt="image" src="https://github.com/user-attachments/assets/7de7aae1-3dd3-45b8-ac7b-dc86c4f73148" />
+### Sharing Event Details
 
-<img width="374" height="860" alt="image" src="https://github.com/user-attachments/assets/db65c08f-d0ea-4c82-a4b3-b1bacde03423" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/83055fc3-9814-472c-b8be-36f7cfd9010a" width="250" alt="Android share sheet"/>
+  <br/>
+  <b>Share sheet opened with an implicit ACTION_SEND intent</b>
+</p>
 
-<img width="387" height="854" alt="image" src="https://github.com/user-attachments/assets/d9bece96-16b9-4aef-8a7f-62df6520d6c3" />
+### Rotation
 
-#Sharing event details:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/76d4df3c-ca67-4526-8148-03c73322bd77" width="250" alt="Detail screen in portrait"/>
+  <br/>
+  <b>Before rotation (portrait)</b>
+</p>
 
-<img width="380" height="852" alt="image" src="https://github.com/user-attachments/assets/83055fc3-9814-472c-b8be-36f7cfd9010a" />
-
-# Rotation:
-
-<img width="387" height="846" alt="image" src="https://github.com/user-attachments/assets/76d4df3c-ca67-4526-8148-03c73322bd77" />
-
-<img width="1825" height="841" alt="image" src="https://github.com/user-attachments/assets/fefe2eac-705d-44b9-84bc-bd81a5a3fba3" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fefe2eac-705d-44b9-84bc-bd81a5a3fba3" width="700" alt="Detail screen in landscape"/>
+  <br/>
+  <b>After rotation (landscape): detail screen remains visible</b>
+</p>
 
 ## AI Disclosure Statement
 
