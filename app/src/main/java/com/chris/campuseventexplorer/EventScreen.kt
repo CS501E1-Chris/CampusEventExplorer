@@ -23,14 +23,15 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.material3.TextButton
+import androidx.compose.ui.graphics.Color
 
+//UI FOR DISPLAYING LIST OF EVENTS
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun displayEventList(
@@ -90,8 +91,13 @@ fun displayEventList(
 //UI for each item of the list
 @Composable
 private fun EventListItem(event: CampusEvent, onClick: () -> Unit) {
-    Card(modifier = Modifier.fillMaxWidth().clickable(onClick = onClick)) {
-        Column(modifier = Modifier.padding(16.dp)) {
+    Card(modifier = Modifier.fillMaxWidth().clickable(onClick = onClick),
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFFEADDFF),   // light lavender card background
+            contentColor = Color(0xFF21005D)      // deep purple text
+        )) {
+        Column(modifier = Modifier.padding(16.dp),
+            ) {
             Text(event.title, style = MaterialTheme.typography.titleMedium)
             Text(event.category, style = MaterialTheme.typography.labelMedium)
             Spacer(Modifier.height(4.dp))
@@ -150,11 +156,15 @@ fun displayEventDetails(
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Text(event.title, style = MaterialTheme.typography.headlineSmall)
+
                 Text(event.category, style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.primary)
+
                 Text("When: ${event.time}", style = MaterialTheme.typography.bodyLarge)
+
                 Text("Where: ${event.location}", style = MaterialTheme.typography.bodyLarge)
                 HorizontalDivider()
+
                 Text(event.description, style = MaterialTheme.typography.bodyMedium)
                 Spacer(Modifier.height(8.dp))
 
