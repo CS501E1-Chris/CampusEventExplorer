@@ -20,8 +20,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material3.TextButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -102,3 +110,77 @@ private fun EventListScreenPreview() {
         onEventSelected = {}
     )
 }
+
+
+//FOR DISPLAYING UI OF EVENT DETAILS
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun displayEventDetails(
+    event: CampusEvent?,
+    onBack: () -> Unit,
+    onShare: () -> Unit
+)
+{
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(event?.title ?: "Event unavailable") },
+                navigationIcon = {
+                    //to navigate back to the event list screen
+                    TextButton(onClick = onBack) {
+                        Text("←", style = MaterialTheme.typography.titleLarge)
+                    }
+                }
+            )
+        }
+    ) { innerPadding ->
+        if (event == null) {
+            EventUnavailable(
+                onReturn = onBack,
+                modifier = Modifier.padding(innerPadding)
+            )
+        } else {
+            Column(
+                modifier = Modifier
+                    .padding(innerPadding)
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Text(event.title, style = MaterialTheme.typography.headlineSmall)
+                Text(event.category, style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.primary)
+                Text("When: ${event.time}", style = MaterialTheme.typography.bodyLarge)
+                Text("Where: ${event.location}", style = MaterialTheme.typography.bodyLarge)
+                HorizontalDivider()
+                Text(event.description, style = MaterialTheme.typography.bodyMedium)
+                Spacer(Modifier.height(8.dp))
+
+                //button to share the event
+                Button(onClick = onShare, modifier = Modifier.fillMaxWidth()) {
+                    Text("Share event")
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun EventUnavailable(onReturn: () -> Unit, modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text("Event unavailable", style = MaterialTheme.typography.headlineSmall)
+        Spacer(Modifier.height(16.dp))
+        Button(onClick = onReturn) {
+            Text("Return to events")
+        }
+    }
+}
+
